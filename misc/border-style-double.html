@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<style type="text/css">
+    body {
+      background-color: gray;
+      padding: 1em 10%;
+    }
+    div {
+      font-family: monospace;
+      white-space: pre;
+    }
+    .bug {
+      background-color: white;
+      width: 100%;
+      min-height: 3em;
+      border-right: 12px double red;
+      border-left: 12px double red;
+    }
+    .fix {
+      border-bottom: 1px solid transparent;
+      margin-bottom: -1px;
+    }
+	</style>
+    </head>
+    <body>
+      <h1>Is this a Webkit rendering bug?</h1>
+      <div class="bug">
+        border-right: 12px double red;
+        border-left: 12px double red;
+      </div>
+      <div class="bug">
+        Note: No border-top or border-bottom!
+      </div>
+      <div class="bug">
+        Still, 1px wide lines separating the double borders
+      </div>
+      <h1>An almost perfect-looking workaround:</h1>
+      <div class="bug fix">
+        This workaround looks quite good:
+      </div>
+      <div class="bug fix">
+        border-right: 12px double red;
+        border-left: 12px double red;
+        border-bottom: 1px solid transparent;
+        margin-bottom: -1px;
+      </div>
+      <div class="bug fix">
+        Nevertheless, problems at the lower end of the double borders down here.
+      </div>
+      <p>Tested in Chrome 26.0.1410.43, Chrome 28.0.1457.0 canary, Safari 6.0.3 (8536.28.10) (all on OS X 10.8.3).</p>
+    </body>
+</html>
